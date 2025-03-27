@@ -20,7 +20,7 @@ const Sim = ({ tag = undefined }) => {
   const c_h = 250 / aspect
 
   // set resolution/element size
-  const resolution = 25
+  const resolution = 100
   const y_cells = resolution
   const x_cells = Math.floor(resolution * aspect)
   const h = 1 / resolution
@@ -34,12 +34,11 @@ const Sim = ({ tag = undefined }) => {
   ]
 
   let flu = new Fluid(1000, x_cells, y_cells, h)
-  const canvasRef = useRef(null)
 
   useEffect (() => {
     // init mat4/canvas/context
     let mat4 = require('gl-mat4')
-    const canvas = canvasRef.current
+    const canvas = document.getElementById('fluid')
     const gl = canvas.getContext('webgl')
 
     // device width/height is aspect ratio and limit drawn pixels
@@ -280,7 +279,7 @@ const Sim = ({ tag = undefined }) => {
         drag(event.offsetX, event.offsetY);
       });
     
-      /* hero.addEventListener('touchstart', event => {
+      hero.addEventListener('touchstart', event => {
         startDrag(event.touches[0].clientX, event.touches[0].clientY)
       });
     
@@ -291,7 +290,7 @@ const Sim = ({ tag = undefined }) => {
         event.preventDefault();
         event.stopImmediatePropagation();
         drag(event.touches[0].clientX, event.touches[0].clientY)
-      }, { passive: false}); */
+      }, { passive: false});
   }
 
     return () => {
@@ -306,7 +305,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas ref={canvasRef} id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
   )
 }
 
