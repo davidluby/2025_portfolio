@@ -39,7 +39,7 @@ const Sim = ({ tag = undefined }) => {
     // init mat4/canvas/context
     let mat4 = require('gl-mat4')
     const canvas = document.getElementById('fluid')
-    const gl = canvas.getContext('webgl')
+    const gl = canvas.getContext('webgl2')
 
     // device width/height is aspect ratio and limit drawn pixels
     canvas.width = c_w
@@ -169,6 +169,9 @@ const Sim = ({ tag = undefined }) => {
 
       // GL SETTINGS
       gl.clearColor(0, 0, 0, 0);
+      gl.enable(gl.DEPTH_TEST)
+            gl.enable(gl.BLEND);
+            gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
       gl.drawArrays(gl.TRIANGLES, 0, color_data.length)
@@ -224,15 +227,15 @@ const Sim = ({ tag = undefined }) => {
 
     function startDrag(x, y) {
       mouseDown = true;
-      x = x / screen.innerWidth * aspect
-      y = y / screen.innerHeight
+      x = x / window.innerWidth * aspect
+      y = y / window.innerHeight
       interact(x, y, true);
     }
 
     function drag(x, y) {
       if (mouseDown) {
-        x = x / screen.innerWidth * aspect
-        y = y / screen.innerHeight
+        x = x / window.innerWidth * aspect
+        y = y / window.innerHeight
         interact(x, y, false);
       }
     }
@@ -306,7 +309,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen border-4 border-red-500'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
   )
 }
 
