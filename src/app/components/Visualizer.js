@@ -3,23 +3,27 @@ import React, { useEffect } from 'react'
 import Fluid from './Simulator'
 
 const Sim = ({ tag = undefined }) => {
-  const scene = {
-    gravity : 0,
-    dt : 1 / 20,
-    iterations : 10,
-    frame_nr : 0,
-    over_relaxation : 1,
-    obstacle_x : 0,
-    obstacle_y : 0,
-    obstacle_r : .05,
-    count : 0
-  }
+  
   
   const aspect = 1
-  const c_w = 250 * aspect
-  const c_h = 250 / aspect
+  const c_w = 500 * aspect
+  const c_h = 500 / aspect
 
-  // set resolution/element size
+  
+
+  useEffect (() => {
+    const scene = {
+      gravity : 0,
+      dt : 1 / 20,
+      iterations : 10,
+      frame_nr : 0,
+      over_relaxation : 1,
+      obstacle_x : 0,
+      obstacle_y : 0,
+      obstacle_r : .05,
+      count : 0
+    }
+    // set resolution/element size
   const resolution = 100
   const y_cells = resolution
   const x_cells = Math.floor(resolution * aspect)
@@ -34,8 +38,6 @@ const Sim = ({ tag = undefined }) => {
   ]
 
   let flu = new Fluid(1000, x_cells, y_cells, h)
-
-  useEffect (() => {
     // init mat4/canvas/context
     let mat4 = require('gl-mat4')
     const canvas = document.getElementById('fluid')
