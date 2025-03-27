@@ -3,7 +3,7 @@ import Visualizer from '../components/Visualizer'
 
 const page = () => {
   return (
-    <Visualizer />
+    <Visualizer name='fluid'/>
   )
 }
 
