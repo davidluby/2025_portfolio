@@ -306,7 +306,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-1/2 h-1/2'></canvas>
   )
 }
 
