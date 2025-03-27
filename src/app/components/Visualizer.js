@@ -20,7 +20,7 @@ const Sim = ({ tag = undefined }) => {
   const c_h = 250 / aspect
 
   // set resolution/element size
-  const resolution = 200
+  const resolution = 25
   const y_cells = resolution
   const x_cells = Math.floor(resolution * aspect)
   const h = 1 / resolution
