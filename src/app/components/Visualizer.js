@@ -227,15 +227,15 @@ const Sim = ({ tag = undefined }) => {
 
     function startDrag(x, y) {
       mouseDown = true;
-      x = x / window.innerWidth * aspect
-      y = y / window.innerHeight
+      x = x / document.documentElement.clientWidth * aspect
+      y = y / document.documentElement.clientHeight
       interact(x, y, true);
     }
 
     function drag(x, y) {
       if (mouseDown) {
-        x = x / window.innerWidth * aspect
-        y = y / window.innerHeight
+        x = x / document.documentElement.clientWidth * aspect
+        y = y / document.documentElement.clientHeight
         interact(x, y, false);
       }
     }
