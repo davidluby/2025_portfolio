@@ -224,15 +224,15 @@ const Sim = ({ tag = undefined }) => {
 
     function startDrag(x, y) {
       mouseDown = true;
-      x = x / window.innerWidth * aspect
-      y = y / window.innerHeight
+      x = x / screen.innerWidth * aspect
+      y = y / screen.innerHeight
       interact(x, y, true);
     }
 
     function drag(x, y) {
       if (mouseDown) {
-        x = x / window.innerWidth * aspect
-        y = y / window.innerHeight
+        x = x / screen.innerWidth * aspect
+        y = y / screen.innerHeight
         interact(x, y, false);
       }
     }
@@ -306,7 +306,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-1/2 h-1/2'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen border-4 border-red-500'></canvas>
   )
 }
 
