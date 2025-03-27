@@ -280,7 +280,7 @@ const Sim = ({ tag = undefined }) => {
         drag(event.offsetX, event.offsetY);
       });
     
-      hero.addEventListener('touchstart', event => {
+      /* hero.addEventListener('touchstart', event => {
         startDrag(event.touches[0].clientX, event.touches[0].clientY)
       });
     
@@ -291,7 +291,7 @@ const Sim = ({ tag = undefined }) => {
         event.preventDefault();
         event.stopImmediatePropagation();
         drag(event.touches[0].clientX, event.touches[0].clientY)
-      }, { passive: false});
+      }, { passive: false}); */
   }
 
     return () => {
