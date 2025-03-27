@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import Fluid from './Simulator'
 
 const Sim = ({ tag = undefined }) => {
@@ -65,14 +65,14 @@ const Sim = ({ tag = undefined }) => {
       const vertex_shader = gl.createShader(gl.VERTEX_SHADER)
       gl.shaderSource(vertex_shader,
         `precision lowp float;
-        attribute vec4 position;
-        attribute vec4 color;
-        varying vec4 vertex_color;
+        attribute vec3 position;
+        attribute vec3 color;
+        varying vec3 vertex_color;
         uniform mat4 matrix;
         
         void main() {
           vertex_color = color;
-          gl_Position = matrix * position;
+          gl_Position = matrix * vec4(position, 1);
         }`
       )
       gl.compileShader(vertex_shader)
@@ -83,10 +83,10 @@ const Sim = ({ tag = undefined }) => {
       const fragment_shader = gl.createShader(gl.FRAGMENT_SHADER)
       gl.shaderSource(fragment_shader,
         `precision lowp float;
-        varying vec4 vertex_color;
+        varying vec3 vertex_color;
         
         void main() {
-          gl_FragColor = vertex_color;
+          gl_FragColor = vec4(vertex_color, 1);
         }`
       )
       gl.compileShader(fragment_shader)
