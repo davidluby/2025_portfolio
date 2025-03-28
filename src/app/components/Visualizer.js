@@ -240,7 +240,7 @@ const Sim = ({ tag = undefined }) => {
       mouseDown = false;
     }
 
-    if (tag === undefined) {
+    /* if (tag === undefined) {
       canvas.addEventListener('mousedown', event => {
         startDrag(event.offsetX, event.offsetY);
       });
@@ -291,7 +291,7 @@ const Sim = ({ tag = undefined }) => {
         event.stopImmediatePropagation();
         drag(event.touches[0].clientX, event.touches[0].clientY)
       }, { passive: false});
-  }
+  } */
 
     /* return () => {
       if (tag === undefined) {
