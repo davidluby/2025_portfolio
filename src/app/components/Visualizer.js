@@ -62,7 +62,7 @@ const Sim = ({ tag = undefined }) => {
 
       const vertex_shader = gl.createShader(gl.VERTEX_SHADER)
       gl.shaderSource(vertex_shader,
-        `precision lowp float;
+        `precision mediump float;
         attribute vec3 position;
         attribute vec3 color;
         varying vec3 vertex_color;
@@ -80,7 +80,7 @@ const Sim = ({ tag = undefined }) => {
 
       const fragment_shader = gl.createShader(gl.FRAGMENT_SHADER)
       gl.shaderSource(fragment_shader,
-        `precision lowp float;
+        `precision mediump float;
         varying vec3 vertex_color;
         
         void main() {
