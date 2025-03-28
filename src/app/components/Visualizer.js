@@ -20,7 +20,7 @@ const Sim = ({ tag = undefined }) => {
   const c_h = 500 / aspect
 
   // set resolution/element size
-  const resolution = 100
+  const resolution = 200
   const y_cells = resolution
   const x_cells = Math.floor(resolution * aspect)
   const h = 1 / resolution
@@ -39,9 +39,11 @@ const Sim = ({ tag = undefined }) => {
     // init mat4/canvas/context
     let mat4 = require('gl-mat4')
     const canvas = document.getElementById('fluid')
-    const gl = canvas.getContext('webgl2')
+    const gl = canvas.getContext('webgl')
 
     // device width/height is aspect ratio and limit drawn pixels
+    canvas.width = c_w
+    canvas.height = c_h
 
     //CHANGE TO 2D
     let mesh_vertices = new Float32Array(x_cells * y_cells * 2 * 6)
@@ -62,7 +64,7 @@ const Sim = ({ tag = undefined }) => {
 
       const vertex_shader = gl.createShader(gl.VERTEX_SHADER)
       gl.shaderSource(vertex_shader,
-        `precision mediump float;
+        `precision lowp float;
         attribute vec3 position;
         attribute vec3 color;
         varying vec3 vertex_color;
@@ -80,7 +82,7 @@ const Sim = ({ tag = undefined }) => {
 
       const fragment_shader = gl.createShader(gl.FRAGMENT_SHADER)
       gl.shaderSource(fragment_shader,
-        `precision mediump float;
+        `precision lowp float;
         varying vec3 vertex_color;
         
         void main() {
@@ -147,9 +149,9 @@ const Sim = ({ tag = undefined }) => {
             let val = flu.d[(x+1)*flu.y_dim + (y+1)]
             // 3 points per vertex times 6 vertices per element times x/y loops
             idx = x * n * 18 + y * 18 + i * 3
-            dta[idx] = idx / (x_cells * n * 18 + y_cells * 18 + 6 * 3)//val * r
-            dta[idx + 1] = idx / (x_cells * n * 18 + y_cells * 18 + 6 * 3)//val * g
-            dta[idx + 2] = idx / (x_cells * n * 18 + y_cells * 18 + 6 * 3)//val * b
+            dta[idx] = val * r
+            dta[idx + 1] = val * g
+            dta[idx + 2] = val * b
           }
         }
       }
@@ -158,43 +160,30 @@ const Sim = ({ tag = undefined }) => {
 
     function gl_draw () {
       color_data = gl_color(color_data)
-      let projection_matrix = mat4.create();
-            mat4.perspective(projection_matrix,
-                70 * Math.PI / 180,   // vertical fov
-                1 * canvas.width / canvas.height, // aspect ratio
-                1e-4,   // near cull distance
-                1e4 // far cull distance
-            );
 
       gl.bufferData(gl.ARRAY_BUFFER, color_data, gl.STATIC_DRAW)
 
       let view_matrix = mat4.create()
-      mat4.translate(view_matrix, view_matrix, [0, 0.45, -3.75]);
-      mat4.multiply(view_matrix, projection_matrix, view_matrix);
+
       gl.uniformMatrix4fv(uniform_location.matrix, false, view_matrix)
 
       // GL SETTINGS
-      //gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-      gl.clearColor(0, 0, 0, 0);
-            gl.enable(gl.DEPTH_TEST)
-            gl.enable(gl.BLEND);
-            gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
       gl.drawArrays(gl.TRIANGLES, 0, color_data.length)
     }
 
     function update () {
-      /* if (scene.frame_nr % 100 == 0) {
+      if (scene.frame_nr % 100 == 0) {
         const x = aspect / 2 + Math.cos(Math.random() * Math.PI) * aspect / 4
         const y = 0.5 + Math.cos(Math.random() * Math.PI) / 4
         interact(x, y, false)
-      } */
+      }
 
       flu.simulate({scene})
       gl_draw()
       scene.frame_nr++
-      //requestAnimationFrame(update)
+      requestAnimationFrame(update)
     }
 
     function interact (x, y, reset) {
@@ -230,7 +219,7 @@ const Sim = ({ tag = undefined }) => {
       }
     }
 
-    /* var mouseDown = false;
+    var mouseDown = false;
 
     function startDrag(x, y) {
       mouseDown = true;
@@ -249,9 +238,9 @@ const Sim = ({ tag = undefined }) => {
 
     function endDrag() {
       mouseDown = false;
-    } */
+    }
 
-    /* if (tag === undefined) {
+    if (tag === undefined) {
       canvas.addEventListener('mousedown', event => {
         startDrag(event.offsetX, event.offsetY);
       });
@@ -302,22 +291,21 @@ const Sim = ({ tag = undefined }) => {
         event.stopImmediatePropagation();
         drag(event.touches[0].clientX, event.touches[0].clientY)
       }, { passive: false});
-  } */
+  }
 
-    /* return () => {
+    return () => {
       if (tag === undefined) {
         canvas.dispose()
       } else {
         hero.dispose()
-      }
-    } */
+    }
+      
+    }
 
   }, [])
 
   return (
-    <div className='border-4'>
-    <canvas id='fluid' width={1000} height={1000} className='w-[50%] h-[50%] border-4 border-red-500 z-10'></canvas>
-  </div>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
   )
 }
 
