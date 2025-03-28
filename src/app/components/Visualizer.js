@@ -42,8 +42,6 @@ const Sim = ({ tag = undefined }) => {
     const gl = canvas.getContext('webgl2')
 
     // device width/height is aspect ratio and limit drawn pixels
-    canvas.width = c_w
-    canvas.height = c_h
 
     //CHANGE TO 2D
     let mesh_vertices = new Float32Array(x_cells * y_cells * 2 * 6)
@@ -304,7 +302,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-40 h-40 border-4 border-red-500 z-10'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-[50%] h-[50%] border-4 border-red-500 z-10'></canvas>
   )
 }
 
