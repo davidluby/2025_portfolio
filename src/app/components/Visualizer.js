@@ -174,11 +174,11 @@ const Sim = ({ tag = undefined }) => {
     }
 
     function update () {
-      if (scene.frame_nr % 100 == 0) {
+      /* if (scene.frame_nr % 100 == 0) {
         const x = aspect / 2 + Math.cos(Math.random() * Math.PI) * aspect / 4
         const y = 0.5 + Math.cos(Math.random() * Math.PI) / 4
         interact(x, y, false)
-      }
+      } */
 
       flu.simulate({scene})
       gl_draw()
@@ -219,7 +219,7 @@ const Sim = ({ tag = undefined }) => {
       }
     }
 
-    var mouseDown = false;
+    /* var mouseDown = false;
 
     function startDrag(x, y) {
       mouseDown = true;
@@ -238,7 +238,7 @@ const Sim = ({ tag = undefined }) => {
 
     function endDrag() {
       mouseDown = false;
-    }
+    } */
 
     /* if (tag === undefined) {
       canvas.addEventListener('mousedown', event => {
