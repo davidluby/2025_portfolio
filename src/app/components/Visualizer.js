@@ -183,7 +183,7 @@ const Sim = ({ tag = undefined }) => {
       flu.simulate({scene})
       gl_draw()
       scene.frame_nr++
-      requestAnimationFrame(update)
+      //requestAnimationFrame(update)
     }
 
     function interact (x, y, reset) {
