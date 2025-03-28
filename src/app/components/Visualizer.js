@@ -158,11 +158,19 @@ const Sim = ({ tag = undefined }) => {
 
     function gl_draw () {
       color_data = gl_color(color_data)
+      let projection_matrix = mat4.create();
+            mat4.perspective(projection_matrix,
+                70 * Math.PI / 180,   // vertical fov
+                1 * canvas.width / canvas.height, // aspect ratio
+                1e-4,   // near cull distance
+                1e4 // far cull distance
+            );
 
       gl.bufferData(gl.ARRAY_BUFFER, color_data, gl.STATIC_DRAW)
 
       let view_matrix = mat4.create()
-
+      mat4.translate(view_matrix, view_matrix, [0, 0.45, -3.75]);
+      mat4.multiply(view_matrix, projection_matrix, view_matrix);
       gl.uniformMatrix4fv(uniform_location.matrix, false, view_matrix)
 
       // GL SETTINGS
