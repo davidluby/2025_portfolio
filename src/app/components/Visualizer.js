@@ -149,9 +149,9 @@ const Sim = ({ tag = undefined }) => {
             let val = flu.d[(x+1)*flu.y_dim + (y+1)]
             // 3 points per vertex times 6 vertices per element times x/y loops
             idx = x * n * 18 + y * 18 + i * 3
-            dta[idx] = val * r
-            dta[idx + 1] = val * g
-            dta[idx + 2] = val * b
+            dta[idx] = idx / (n * n * 18 + y_cells * 18 + 6 * 3)//val * r
+            dta[idx + 1] = idx / (n * n * 18 + y_cells * 18 + 6 * 3)//val * g
+            dta[idx + 2] = idx / (n * n * 18 + y_cells * 18 + 6 * 3)//val * b
           }
         }
       }
