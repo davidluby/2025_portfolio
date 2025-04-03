@@ -140,9 +140,9 @@ const Sim = ({ tag = undefined }) => {
     function gl_color (dta) {
       const n = y_cells
       let idx = 0
-      const r = 240 / 255
-      const g = 200 / 255
-      const b = 140 / 255
+      const r = 6 / 255
+      const g = 57 / 255
+      const b = 112 / 255
       for (let x = 0; x < x_cells - 0; x++) {
         for (let y = 0; y < y_cells - 0; y++) {
           for (let i = 0; i < 6; i++) {
@@ -174,12 +174,6 @@ const Sim = ({ tag = undefined }) => {
     }
 
     function update () {
-      if (scene.frame_nr % 100 == 0) {
-        const x = aspect / 2 + Math.cos(Math.random() * Math.PI) * aspect / 4
-        const y = 0.5 + Math.cos(Math.random() * Math.PI) / 4
-        interact(x, y, false)
-      }
-
       flu.simulate({scene})
       gl_draw()
       scene.frame_nr++
@@ -305,7 +299,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-screen'></canvas>
+    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-full'></canvas>
   )
 }
 
