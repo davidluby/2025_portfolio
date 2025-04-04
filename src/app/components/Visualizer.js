@@ -140,9 +140,9 @@ const Sim = ({ tag = undefined }) => {
     function gl_color (dta) {
       const n = y_cells
       let idx = 0
-      const r = 227 / 255
-      const g = 216 / 255
-      const b = 150 / 255
+      const r = 175 / 255
+      const g = 170 / 255
+      const b = 125 / 255
       for (let x = 0; x < x_cells - 0; x++) {
         for (let y = 0; y < y_cells - 0; y++) {
           for (let i = 0; i < 6; i++) {
