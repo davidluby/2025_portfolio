@@ -11,7 +11,7 @@ const page = () => {
         <Navbar />
         <Splash />
       </div>
-      <div className='flex flex-col md:flex-row items-center justify-evenly h-screen'>
+      <div className='min-h-screen flex flex-col items-center md:flex-row md:justify-evenly'>
         <Profile />
         <Projects />
       </div>
