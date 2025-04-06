@@ -48,8 +48,8 @@ const Sim = ({ tag = undefined }) => {
     canvas.height = c_h
 
     //CHANGE TO 2D
-    let mesh_vertices = new Float32Array(x_cells * y_cells * 2 * 6)
-    mesh_vertices = create_mesh(mesh_vertices, element)
+    let mesh_vertices = new Float32Array(create_mesh(element))
+    //mesh_vertices = create_mesh(mesh_vertices, element)
     let color_data = new Float32Array(x_cells * y_cells * 3 * 6)
     let uniform_location = initialize_gl()
 
@@ -117,7 +117,8 @@ const Sim = ({ tag = undefined }) => {
       return uniform_location
     }
 
-    function create_mesh (mesh_vertices, element) {
+    function create_mesh (element) {
+      let mesh_vertices = []
       const n = y_cells
       let idx = 0
       let offset_x
@@ -151,9 +152,9 @@ const Sim = ({ tag = undefined }) => {
 
             // 3 points per vertex times 6 vertices per element times x/y loops
             idx = x * n * 18 + y * 18 + i * 3
-            dta[idx] = val * 200 / 256 + .15
+            dta[idx] = val * 225 / 256 + .15
             dta[idx + 1] = val * 200 / 256 + .5
-            dta[idx + 2] = val * 225 / 256 + .75
+            dta[idx + 2] = val * 200 / 256 + .75
           }
         }
       }
