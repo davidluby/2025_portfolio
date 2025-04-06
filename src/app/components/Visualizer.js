@@ -171,7 +171,7 @@ const Sim = ({ tag = undefined }) => {
       // GL SETTINGS
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-      gl.drawArrays(gl.TRIANGLES, 0, color_data.length)
+      gl.drawArrays(gl.TRIANGLES, 0, color_data.length / 3)
     }
 
     function update () {
