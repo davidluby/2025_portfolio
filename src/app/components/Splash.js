@@ -20,7 +20,7 @@ const Splash = () => {
       }
       <div className="hero-content text-neutral-content text-center pointer-events-none">
           <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold select-none">Hi. I'm Dave</h1>
+              <h1 className="mb-5 text-5xl font-bold select-none">Hi. I&apos;m Dave</h1>
               <p className="mb-5 select-none">
                   Thanks for visiting my portfolio. Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
               </p>
