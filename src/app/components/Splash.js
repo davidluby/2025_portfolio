@@ -18,7 +18,7 @@ const Splash = () => {
         </div>
         ) : (null)
       }
-      <div className="hero-content text-neutral-content text-center pointer-events-none">
+      <div className="hero-content text-neutral-content text-center select-none pointer-events-none">
           <div className="max-w-md">
               <h1 className="mb-5 text-5xl font-bold">Hi. I&apos;m Dave</h1>
               <p className="mb-5">
