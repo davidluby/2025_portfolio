@@ -1,4 +1,5 @@
 import "../globals.css";
+import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -8,15 +9,16 @@ export const metadata = {
   description: "This is the project potfolio for David Luby",
 };
 
-
-export default function RootLayout({ children }) {
+const layout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body className='bg-base-200'>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
-  );
+  )
 }
+
+export default layout

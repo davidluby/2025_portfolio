@@ -1,10 +1,4 @@
 @import "tailwindcss";
-@plugin "daisyui";
-@plugin "daisyui/theme" {
-  name: "mytheme";
-  default: true;
-  --color-base-100: #363131;
-  --color-base-200: rgb(71, 65, 65);
-  --color-base-300: #9f9665;
-  --color-base-content: #9f9665;
+@plugin "daisyui" {
+   themes: emerald --default, dim --prefersdark;
 }

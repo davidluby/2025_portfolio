@@ -12,7 +12,6 @@ class Fluid {
   
       // fluid "density" or cell fullness, pressure/smoke fields
       this.d = new Float32Array(this.x_dim * this.y_dim)
-      this.d.fill(1.0)
       this.d_new = new Float32Array(this.x_dim * this.y_dim)
       this.p = new Float32Array(this.x_dim * this.y_dim)
       this.s = new Float32Array(this.x_dim * this.y_dim)
@@ -217,13 +216,16 @@ class Fluid {
       this.advect_smoke(scene.dt)
     }
   
-    // fill cells with color gradient temp data
-    test_fill () {
-      let k = 0
-      for (let i = 0; i < this.x_dim; i++) {
-        for (let j = 0; j < this.y_dim; j++) {
-          k++
-          this.d[i * this.y_dim + j] = k / (this.x_dim * this.y_dim)
+    // fill d with decimal color for first iteration
+    init (image_data) {
+      //this.d.set(image_data)
+      let ii
+      let fi
+      for (let x = 0; x < this.x_dim - 2; x++) {
+        for (let y = 0; y < this.y_dim - 2; y++) {
+          ii = x * (this.y_dim - 2) + (this.x_dim - 2 - y)
+          fi = (x + 1) * (this.y_dim - 0) + (y + 0)
+          this.d[fi] = image_data[ii]
         }
       }
     }

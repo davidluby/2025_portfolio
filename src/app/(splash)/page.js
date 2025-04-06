@@ -4,7 +4,7 @@ import Splash from '../components/Splash'
 import Profile from '../components/Profile'
 import Projects from '../components/Projects'
 
-export default function page() {
+const page = () => {
   return (
     <div>
       <div className='flex flex-col h-screen'>
@@ -18,3 +18,5 @@ export default function page() {
     </div>
   )
 }
+
+export default page

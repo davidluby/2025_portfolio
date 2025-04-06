@@ -1,17 +1,18 @@
 'use client'
 import React, { useEffect } from 'react'
 import Fluid from './Simulator'
+import Initialize from './Initialize'
 
 const Sim = ({ tag = undefined }) => {
   const scene = {
     gravity : 0,
-    dt : 1 / 20,
-    iterations : 10,
+    dt : 1 / 120,
+    iterations : 5,
     frame_nr : 0,
-    over_relaxation : 1,
+    over_relaxation : 1.9,
     obstacle_x : 0,
     obstacle_y : 0,
-    obstacle_r : .05,
+    obstacle_r : .025,
     count : 0
   }
   
@@ -20,7 +21,7 @@ const Sim = ({ tag = undefined }) => {
   const c_h = 500 / aspect
 
   // set resolution/element size
-  const resolution = 200
+  const resolution = 300
   const y_cells = resolution
   const x_cells = Math.floor(resolution * aspect)
   const h = 1 / resolution
@@ -34,6 +35,7 @@ const Sim = ({ tag = undefined }) => {
   ]
 
   let flu = new Fluid(1000, x_cells, y_cells, h)
+  flu.init(Initialize)
 
   useEffect (() => {
     // init mat4/canvas/context
@@ -140,18 +142,18 @@ const Sim = ({ tag = undefined }) => {
     function gl_color (dta) {
       const n = y_cells
       let idx = 0
-      const r = 175 / 255
-      const g = 170 / 255
-      const b = 125 / 255
+      let r, g, b
+
       for (let x = 0; x < x_cells - 0; x++) {
         for (let y = 0; y < y_cells - 0; y++) {
           for (let i = 0; i < 6; i++) {
             let val = flu.d[(x+1)*flu.y_dim + (y+1)]
+
             // 3 points per vertex times 6 vertices per element times x/y loops
             idx = x * n * 18 + y * 18 + i * 3
-            dta[idx] = val * r
-            dta[idx + 1] = val * g
-            dta[idx + 2] = val * b
+            dta[idx] = val * 200 / 256 + .15
+            dta[idx + 1] = val * 200 / 256 + .5
+            dta[idx + 2] = val * 225 / 256 + .75
           }
         }
       }

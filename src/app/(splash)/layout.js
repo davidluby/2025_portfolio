@@ -1,4 +1,5 @@
 import "../globals.css";
+import React from 'react'
 import Footer from '../components/Footer'
 
 
@@ -8,13 +9,15 @@ export const metadata = {
 };
 
 
-export default function RootLayout({ children }) {
+const layout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
+      <body className='bg-base-200'>
         <main>{children}</main>
         <Footer />
       </body>
     </html>
-  );
+  )
 }
+
+export default layout
