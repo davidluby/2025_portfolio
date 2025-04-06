@@ -17,8 +17,8 @@ const Sim = ({ tag = undefined }) => {
   }
   
   const aspect = 1
-  const c_w = 500 * aspect
-  const c_h = 500 / aspect
+  const canvas_width = 500 * aspect
+  const canvas_height = 500 / aspect
 
   // set resolution/element size
   const resolution = 300
@@ -44,11 +44,11 @@ const Sim = ({ tag = undefined }) => {
     const gl = canvas.getContext('webgl')
 
     // device width/height is aspect ratio and limit drawn pixels
-    canvas.width = c_w
-    canvas.height = c_h
+    canvas.width = canvas_width
+    canvas.height = canvas_height
 
     //CHANGE TO 2D
-    let mesh_vertices = new Float32Array(flu.y_dim * flu.x_dim * 2 * 6)
+    let mesh_vertices = new Float32Array(x_cells * y_cells * 2 * 6)
     mesh_vertices = create_mesh(mesh_vertices, element)
     let color_data = new Float32Array(x_cells * y_cells * 3 * 6)
     let uniform_location = initialize_gl()
@@ -142,15 +142,14 @@ const Sim = ({ tag = undefined }) => {
     function gl_color (dta) {
       const n = y_cells
       let idx = 0
-      let r, g, b
 
       for (let x = 0; x < x_cells - 0; x++) {
         for (let y = 0; y < y_cells - 0; y++) {
           for (let i = 0; i < 6; i++) {
-            let val = flu.d[(x+1)*flu.y_dim + (y+1)]
+            let val = flu.d[(x+1) * (flu.y_dim) + (y+1)]
 
             // 3 points per vertex times 6 vertices per element times x/y loops
-            idx = x * n * 18 + y * 18 + i * 3
+            idx = (x) * n * 18 + (y) * 18 + i * 3
             dta[idx] = val * 225 / 256 + .15
             dta[idx + 1] = val * 200 / 256 + .5
             dta[idx + 2] = val * 200 / 256 + .75
@@ -196,20 +195,24 @@ const Sim = ({ tag = undefined }) => {
       const r = scene.obstacle_r
       const n = flu.y_dim
 
-      for (let i = 2; i < flu.x_dim - 2; i++) {
-        for (let j = 2; j < flu.y_dim - 2; j++) {
-          flu.s[i*n +j] = 1
+      for (let i = 1; i < flu.x_dim - 1; i++) {
+        for (let j = 1; j < flu.y_dim - 1; j++) {
+          if (j < 2) {
+            flu.s[i*n + (n-j)] = 0
+          } else {
+            flu.s[i*n + (n-j)] = 1
+          }
 
           let dx = (i + 0.5) * flu.h - x
           let dy = (j + 0.5) * flu.h - y
-
+          
           if (dx * dx + dy * dy < r * r) {
             flu.s[i*n + (n - j)] = 1.0
             flu.d[i*n + (n - j)] = 0.5 + Math.sin(0.1 * scene.frame_nr) / 2
             flu.u[i*n + (n - j)] = vx
             flu.u[(i+1)*n + (n - j)] = vx
             flu.v[i*n + (n - j)] = -vy
-            flu.v[i*n + (n - j)+1] = -vy
+            flu.v[i*n + (n - j - 1)] = -vy
           }
         }
       }
@@ -219,15 +222,17 @@ const Sim = ({ tag = undefined }) => {
 
     function startDrag(x, y) {
       mouseDown = true;
-      x = x / window.innerWidth * aspect
-      y = y / window.innerHeight
+      const element = document.getElementById('fluid')
+      x = x / element.clientWidth * aspect
+      y = y / element.clientHeight
       interact(x, y, true);
     }
 
     function drag(x, y) {
       if (mouseDown) {
-        x = x / window.innerWidth * aspect
-        y = y / window.innerHeight
+        const element = document.getElementById('fluid')
+      x = x / element.clientWidth * aspect
+      y = y / element.clientHeight
         interact(x, y, false);
       }
     }
@@ -301,7 +306,7 @@ const Sim = ({ tag = undefined }) => {
   }, [])
 
   return (
-    <canvas id='fluid' width={c_w} height={c_h} className='w-full h-full'></canvas>
+    <canvas id='fluid' width={canvas_width} height={canvas_height} className='w-full h-full'></canvas>
   )
 }
 
