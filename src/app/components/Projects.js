@@ -1,27 +1,20 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Projects = () => {
   return (
-    <div className='w-1/3'><div className="carousel w-full">
+    <div className='w-1/3'><div className="carousel w-full rounded-lg shadow-md">
     <div id="item1" className="carousel-item w-full">
-      <img
-        src="/headshot.jpg"
-        className="w-full" />
+      <Image className='w-full' src='/bike.jpg' alt='Motorized Bicycle' width='1000' height='1000' />
     </div>
     <div id="item2" className="carousel-item w-full">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-        className="w-full" />
+      <Image className='w-full' src='/mech/arduino.jpg' alt='Arduino' width='1000' height='1000' />
     </div>
-    <div id="item3" className="carousel-item w-full">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-        className="w-full" />
+    <div id="item3" className="carousel-item w-full relative overflow-hidden">
+      <Image className='scale-425' src='/timeline/fluid.png' alt='Fluid' layout={'fill'} objectFit={'contain'}/>
     </div>
     <div id="item4" className="carousel-item w-full">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-        className="w-full" />
+      <Image className='w-full' src='/fullstack_old/system.png' alt='Fullstack' width='1920' height='1080' />
     </div>
   </div>
   <div className="flex w-full justify-center gap-2 py-2">
