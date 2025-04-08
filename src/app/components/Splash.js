@@ -4,20 +4,41 @@ import Visualizer from './Visualizer'
 
 const Splash = () => {
   const [tip, setTip] = useState(true)
-
-  const text = ['Dave', 'an engineer', 'bad at golf', 'a problem solver']
   const [index, setIndex] = useState(0)
+
+  const text = [
+    'Hi. I\'m Dave', 'Hi. I\'m Dave',
+    'I\'m a problem solver', 'I\'m a problem solver',
+    'I\'m a doer', 'I\'m a doer',
+    'I\'m an engineer', 'I\'m an engineer',
+    'I\'m a thinker', 'I\'m a thinker',
+    'I\'m a creator', 'I\'m a creator'
+  
+  ]
   
   useEffect(() => {
     const interval = setInterval(() => {
+      const slide = document.getElementById('slide')
+      slide.classList.toggle('flex-grow')
+      slide.classList.toggle('w-0')
+      
       if (index === text.length - 1) {
         setIndex(0)
       } else {
         setIndex(index + 1)
       }
-    }, 3000)
-    return () => clearInterval(interval)
+
+    }, 2000)
+
+    return () => {clearInterval(interval)}
   }, [index])
+
+  const handle_scroll = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <div id='hero' className="hero bg-base-200 w-full h-full relative" onClick={() => setTip(false)}>
@@ -33,13 +54,19 @@ const Splash = () => {
         </div>
         ) : (null)
       }
-      <div className="hero-content text-neutral-content text-center select-none pointer-events-none">
-          <div className="w-full md:w-1/2">
-              <h1 className="mb-5 text-2xl md:text-5xl font-bold">Hi. I&apos;m {text[index]}</h1>
+      <div className="hero-content text-white text-center select-none pointer-events-none">
+          <div className="w-full md:w-3/5">
+              <div className='flex justify-center'>
+                <h1 id='slide' className="text-2xl md:text-5xl font-bold text-center relative h-20 w-0 transition-all duration-500 flex-grow text-nowrap overflow-hidden">
+                  <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>&nbsp;{text[index]}</div>
+                </h1>
+              </div>
               <p className="mb-5">
-                  Thanks for visiting my portfolio. Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
+                Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
               </p>
-              <button className="btn btn-primary pointer-events-auto">Get Started</button>
+              <button className="btn btn-neutral pointer-events-auto rounded-full" onClick={() => handle_scroll()}>
+              <svg className='rotate-180 fill-white rounded-full w-full' xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="m3.293 11.293 1.414 1.414L11 6.414V20h2V6.414l6.293 6.293 1.414-1.414L12 2.586l-8.707 8.707z"/></svg>
+              </button>
           </div>
       </div>
     </div>
