@@ -54,7 +54,7 @@ const Splash = () => {
 
   const handle_scroll = () => {
     window.scrollBy({
-      top: window.innerHeight + 4 * 50,
+      top: window.innerHeight + 4 * 0,
       behavior: 'smooth'
     })
   }
