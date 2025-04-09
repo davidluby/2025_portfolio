@@ -1,6 +1,6 @@
 import "../globals.css";
 import React from 'react'
-import Footer from '../components/Footer'
+import Footer from '../components/ui/Footer'
 
 
 export const metadata = {

@@ -1,7 +1,7 @@
 import React from 'react'
-import Skills from '../../components/Skills'
-import Professional from '../../components/Professional'
-import Timeline from '../../components/Timeline'
+import Skills from '../../components/ui/Skills'
+import Professional from '../../components/ui/Professional'
+import Timeline from '../../components/ui/Timeline'
 
 const page = () => {
   return (
