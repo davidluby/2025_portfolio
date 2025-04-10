@@ -4,7 +4,7 @@ import Visualizer from '../simulations/2D-Visualizer'
 
 const Splash = () => {
   const [tip, setTip] = useState(true)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(-1)
 
   const text = [
     'Hi. I\'m Dave', 'Hi. I\'m Dave',
@@ -28,25 +28,33 @@ const Splash = () => {
       } else {
         setIndex(index + 1)
       }
-    }, 2000)
+    }, 1500)
     return () => {clearInterval(interval)}
   }, [index])
 
   useEffect(() => {
+      const blurb = document.getElementById('blurb')
+      blurb.classList.toggle('flex-grow')
+      blurb.classList.toggle('w-0')
+
     if (tip === true) {
+      const splash = document.getElementById('splash')
+      splash.classList.toggle('w-full')
+      splash.classList.toggle('w-0')
+
       const interact = () => {
         const drag = document.getElementById('drag')
         drag.classList.toggle('flex-grow')
         drag.classList.toggle('w-0')
       }
-      setTimeout(() => interact(), 1000)
+      setTimeout(() => interact(), 2500)
     }
   }, [])
 
   const handle_interact = (flag) => {
       if (flag === true) {
       const drag = document.getElementById('drag')
-      drag.classList.toggle('flex-grow')
+      drag.classList.toggle('w-full')
       drag.classList.toggle('w-0')
       setTimeout(() => setTip(false), 1000)
       }
@@ -61,7 +69,7 @@ const Splash = () => {
 
   return (
     <div id='hero' className="hero bg-base-200 w-full h-dvh md:h-full relative" onMouseDown={() => handle_interact(tip)}>
-      <div className='absolute top-0 left-0 w-full h-full'>
+      <div id='splash' className='absolute h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-1000 w-0'>
         <Visualizer tag='hero' />
       </div>
       <div className="hero-overlay absolute top-0 left-0"></div>
@@ -77,17 +85,21 @@ const Splash = () => {
         </div>
         ) : (null)
       }
-      <div className="hero-content text-white text-center select-none pointer-events-none">
+      <div className="hero-content text-white text-center select-none pointer-events-none w-full">
           <div className="w-full md:w-3/5">
-              <div className='flex justify-center'>
-                <h1 id='slide' className="text-2xl md:text-5xl font-bold text-center relative h-20 text-nowrap overflow-hidden transition-all duration-500 w-0 flex-grow">
-                  <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>&nbsp;{text[index]}</div>
+              <div className='flex justify-center w-full'>
+                <h1 id='slide' className="text-2xl md:text-5xl font-bold relative h-20 text-nowrap overflow-hidden transition-all duration-1000 w-0">
+                  <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center'>&nbsp;{text[index]}</div>
                 </h1>
               </div>
-              <p className="mb-5 md:text-lg">
-                Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
-              </p>
-              <button className="btn btn-neutral btn-circle pointer-events-auto animate-bounce" onClick={() => handle_scroll()}>
+              <div className='flex justify-center w-full'>
+              <div id='blurb' className="relative overflow-hidden h-20 transition-all delay-1000 duration-1000 w-0">
+                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center'>
+                  Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
+                </div>
+              </div>
+              </div>
+              <button className="btn btn-neutral btn-circle mt-5 pointer-events-auto animate-bounce" onClick={() => handle_scroll()}>
                 <svg className='rotate-180 fill-white' xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="m3.293 11.293 1.414 1.414L11 6.414V20h2V6.414l6.293 6.293 1.414-1.414L12 2.586l-8.707 8.707z"/></svg>
               </button>
           </div>
