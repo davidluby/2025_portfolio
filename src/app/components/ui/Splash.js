@@ -68,7 +68,7 @@ const Splash = () => {
   }
 
   return (
-    <div id='hero' className="hero bg-base-200 w-full h-dvh md:h-full relative" onMouseDown={() => handle_interact(tip)}>
+    <div id='hero' className="hero bg-base-200 w-full h-full relative" onMouseDown={() => handle_interact(tip)}>
       <div id='splash' className='absolute h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-all duration-1000 w-0'>
         <Visualizer tag='hero' />
       </div>
