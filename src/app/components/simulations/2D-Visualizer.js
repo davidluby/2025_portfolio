@@ -26,12 +26,12 @@ const Sim = ({ tag = undefined }) => {
   const x_cells = Math.floor(resolution * aspect)
   const h = 1 / resolution
   const element = [
-    h, h, h,
-    h, -h, h,
-    -h, h, h,
-    -h, h, h,
-    h, -h, h,
-    -h, -h, h
+    h, h,
+    h, -h,
+    -h, h,
+    -h, h,
+    h, -h,
+    -h, -h
   ]
 
   let flu = new Fluid(1000, x_cells, y_cells, h)
@@ -131,8 +131,8 @@ const Sim = ({ tag = undefined }) => {
           for (let i = 0; i < 6; i++) {
             // 2 points per vertex times 6 vertices per element times x/y loops
             idx = x * n * 12 + y * 12 + i * 2
-            mesh_vertices[idx] = element[i * 3] + 2 * x * h - offset_x
-            mesh_vertices[idx + 1] = element[i * 3 + 1] + 2 * y * h - offset_y
+            mesh_vertices[idx] = element[i * 2] + 2 * x * h - offset_x
+            mesh_vertices[idx + 1] = element[i * 2 + 1] + 2 * y * h - offset_y
           }
         }
       }
@@ -167,9 +167,6 @@ const Sim = ({ tag = undefined }) => {
       let view_matrix = mat4.create()
 
       gl.uniformMatrix4fv(uniform_location.matrix, false, view_matrix)
-
-      // GL SETTINGS
-      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
       gl.drawArrays(gl.TRIANGLES, 0, color_data.length / 3)
     }

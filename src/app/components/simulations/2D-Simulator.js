@@ -206,7 +206,7 @@ class Fluid {
     }
   
     simulate ({scene}) {
-      this.integrate(scene.dt, scene.gravity)
+      //this.integrate(scene.dt, scene.gravity)
   
       this.p.fill(0.0)
       this.solve_incompressibility(scene.over_relaxation, scene.iterations, scene.dt)
