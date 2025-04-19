@@ -21,7 +21,7 @@ const Profile = () => {
           <p className='font-bold'>University of New Hampshire, 2022</p>
           <p className='font-bold italic'>BS, Mechanical Engineering</p>
         </div>
-        <div className="card-actions">
+        <div className="card-actions text-black">
           <div className="badge badge-outline bg-success">Mechanical Engineer</div>
           <div className="badge badge-outline bg-success">Fullstack Developer</div>
           <div className="badge badge-outline bg-error">Bad Golfer</div>

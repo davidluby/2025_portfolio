@@ -1,10 +1,15 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Theme from './Theme'
 
 const Navbar = () => {
+    useEffect(() => {
+        const nav = document.getElementById('navbar-slide')
+        nav.classList.toggle('-translate-y-30')
+    }, [])
   return (
-    <div className="navbar bg-base-300 shadow-sm z-10 p-0">
+    <div id='navbar-slide' className="navbar bg-base-300 shadow-lg p-0 h-0 transition transition-all duration-500 ease-in-out -translate-y-30">
         <div className="navbar-start h-full">
             <div className="dropdown">
                 <div tabIndex="0" role="button" className="btn btn-ghost lg:hidden">
@@ -16,7 +21,7 @@ const Navbar = () => {
                     <li><Link href='mechatronics'>Mechatronics</Link></li>
                     <li>
                         <div>Simulations</div>
-                        <ul className="p-2">
+                        <ul className="p-2 z-10">
                             <li><Link href='3d-fluid'>3D Fluid Simulation</Link></li>
                             <li><Link href='2d-fluid'>2D Fluid Simulation</Link></li>
                             <li><Link href='collision'>Collision Simulation</Link></li>
@@ -36,7 +41,7 @@ const Navbar = () => {
                     <li className='h-full m-0'>
                         <details className='h-full m-0'>
                             <summary className='rounded-none flex items-center h-full m-0'>Simulations</summary>
-                            <ul className="p-2 w-3xs -translate-y-4 bg-base-200 shadow-none rounded-t-none">
+                            <ul className="z-10 p-2 w-3xs -translate-y-4 bg-base-300 shadow-none rounded-t-none">
                                 <li><Link href='3d-fluid'>3D Fluid Simulation</Link></li>
                                 <li><Link href='2d-fluid'>2D Fluid Simulation</Link></li>
                                 <li><Link href='collision'>Collision Simulation</Link></li>
