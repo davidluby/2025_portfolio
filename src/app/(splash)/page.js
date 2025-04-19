@@ -13,7 +13,7 @@ const page = () => {
         <Navbar />
         <Splash />
       </div>
-      <div className='min-h-screen flex flex-col items-center justify-center w-full md:p-25 bg-base-200 overflow-hidden'>
+      <div className='min-h-screen flex flex-col items-center justify-center w-full pt-25 md:p-25 bg-base-200 overflow-hidden'>
         <Timeline />
       </div>
       <div className='w-full h-screen overflow-hidden relative'>
