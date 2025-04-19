@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
+import Image from 'next/image'
 import Navbar from '../components/ui/Navbar'
 import Splash from '../components/ui/Splash'
-import Profile from '../components/ui/Profile'
 import Timeline from '../components/ui/Timeline'
 
 const page = () => {
@@ -11,13 +12,13 @@ const page = () => {
         <Navbar />
         <Splash />
       </div>
-      <div className='min-h-screen flex flex-col justify-center items-center md:flex-row md:justify-evenly w-full bg-neutral'>
-        <div className='w-[97%] md:w-1/4'>
-          <Profile />
-        </div>
-      </div>
-      <div className='min-h-screen flex flex-col items-center justify-center w-full md:p-75 bg-base-200'>
+      <p className='text-5xl font-bold my-25'>Project Timeline</p>
+      <div className='min-h-screen flex flex-col items-center justify-center w-full md:px-50 md:mb-50 bg-base-200 overflow-hidden'>
         <Timeline />
+      </div>
+      <div className='w-full h-screen overflow-hidden relative'>
+        <Image src='/golf.JPG' alt='Golf Background' height={3000} width={3000} />
+        <p className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold text-5xl text-center'>Thanks for visiting. Please feel free to connect with me on LinkedIn.</p>
       </div>
     </div>
   )

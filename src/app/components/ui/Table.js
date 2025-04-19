@@ -22,7 +22,7 @@ const Table = ({ table_data }) => {
 
 
   return (
-    <div className="w-full h-full overflow-x-auto">
+    <div className="w-full h-full overflow-x-auto rounded-lg">
             {
                 keys.map((key) => {
                     return (

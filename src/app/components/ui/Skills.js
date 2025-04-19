@@ -16,13 +16,8 @@ const table_data = {
 
 const Skills = () => {
   return (
-    <div className="card card-side h-96 bg-base-100 shadow-xl">
-        <figure className='w-1/2 md:w-3/5'>
-            <Image src='/headshot.jpg' width={1500} height={1500} alt='headshot' className=''></Image>
-        </figure>
-        <div className="card-body p-0 w-1/2 h-full">
-            <Table table_data={table_data} />
-        </div>
+    <div className="h-70 bg-base-100 shadow-xl rounded-lg">
+        <Table table_data={table_data} />
     </div>
   )
 }

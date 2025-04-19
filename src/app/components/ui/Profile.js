@@ -24,8 +24,6 @@ const Profile = () => {
         <div className="card-actions">
           <div className="badge badge-outline">Mechanical Engineer</div>
           <div className="badge badge-outline">Fullstack Developer</div>
-          <div className="badge badge-outline">Tinkerer</div>
-          <div className="badge badge-outline">Builder</div>
           <div className="badge badge-outline">Bad Golfer</div>
         </div>
       </div>
