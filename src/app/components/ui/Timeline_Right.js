@@ -39,13 +39,13 @@ const Timeline_Element = ({ content }) => {
         <div className="text-lg font-black">{content.title}</div>
         {content.text}
       </div>
-      <div id={content.title} className="timeline-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
+      <div id={content.title} className="timeline-end relative w-19/20 md:w-full h-50 md:h-100 rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
         {
         content.link !== null ?
         <Link href={content.link}>
-          <Image src={content.src} height={500} width={500} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
+          <Image src={content.src} fill={true} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
         </Link> 
-        : <Image src={content.src} height={500} width={500} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
+        : <Image src={content.src} fill={true} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
         }
       </div>
       <hr />
