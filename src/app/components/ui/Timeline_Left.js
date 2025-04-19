@@ -34,12 +34,12 @@ const Timeline_Element = ({ content }) => {
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
         </svg>
       </div>
-      <div className="timeline-end my-50 md:text-start">
+      <div className="timeline-end md:text-start">
       <time className="font-mono italic">{content.year}</time>
         <div className="text-lg font-black">{content.title}</div>
         {content.text}
       </div>
-      <div id={content.title} className="timeline-start md:text-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
+      <div id={content.title} className="timeline-start md:text-end w-19/20 md:w-full rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
         {
         content.link !== null ?
         <Link href={content.link}>

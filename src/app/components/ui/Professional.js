@@ -6,7 +6,7 @@ const Professional = () => {
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" defaultChecked />
         <div className='collapse-title font-semibold flex flex-col'>
-          <div className='flex flex-row justify-between'>
+          <div className='flex flex-col md:flex-row justify-between'>
             <div>Design Engineer</div>
             <div>Mar 2024 - Present</div>
           </div>
@@ -25,7 +25,7 @@ const Professional = () => {
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" />
         <div className='collapse-title font-semibold flex flex-col'>
-          <div className='flex flex-row justify-between'>
+          <div className='flex flex-col md:flex-row justify-between'>
             <div>Mechanical Engineering Intern</div>
             <div>May 2022 - Aug 2022</div>
           </div>
@@ -42,7 +42,7 @@ const Professional = () => {
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" />
         <div className='collapse-title font-semibold flex flex-col'>
-          <div className='flex flex-row justify-between'>
+          <div className='flex flex-col md:flex-row justify-between'>
             <div>Systems Engineering Intern</div>
             <div>Jun 2021 - Aug 2021</div>
           </div>
