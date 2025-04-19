@@ -17,7 +17,7 @@ const page = () => {
         <Timeline />
       </div>
       <div className='w-full h-screen overflow-hidden relative'>
-        <Image src='/golf.JPG' alt='Golf Background' height={3000} width={3000} />
+        <Image src='/golf.JPG' alt='Golf Background' fill={true} />
         <p className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold text-5xl text-center'>Thanks for visiting. Please feel free to connect with me on LinkedIn.</p>
       </div>
     </div>

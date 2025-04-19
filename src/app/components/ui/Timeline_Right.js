@@ -33,18 +33,18 @@ const Timeline_Element = ({ content }) => {
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
       </svg>
       </div>
-      <div className="timeline-start mb-10 md:text-end">
+      <div className="timeline-start md:text-end">
         <time className="font-mono italic">{content.year}</time>
         <div className="text-lg font-black">{content.title}</div>
         {content.text}
       </div>
-      <div id={content.title} className="timeline-end mb-10 md:text-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-2000 translate-y-50 opacity-0">
+      <div id={content.title} className="timeline-end md:text-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-2000 translate-y-50 opacity-0">
         {
         content.link !== null ?
-        <Link href={content.link} className=''>
-          <Image src={content.src} width={1000} height={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
+        <Link href={content.link}>
+          <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
         </Link> 
-        : <Image src={content.src} width={1000} height={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
+        : <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
         }
       </div>
       <hr />
