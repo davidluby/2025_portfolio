@@ -9,7 +9,7 @@ import Timeline from '../components/ui/Timeline'
 const page = () => {
   return (
     <div className='flex flex-col items-center'>
-      <div className='flex flex-col h-screen w-full'>
+      <div className='flex flex-col h-dvh w-full'>
         <Navbar />
         <Splash />
       </div>
