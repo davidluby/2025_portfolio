@@ -15,7 +15,7 @@ const Timeline_Element = ({ content }) => {
           const [entry] = entries
           if (entry.isIntersecting) {
             const timeline_slide = document.getElementById(content.title)
-            timeline_slide.classList.toggle('translate-y-50')
+            timeline_slide.classList.toggle('translate-y-25')
             timeline_slide.classList.toggle('opacity-0')
             observer.unobserve(timeline_slide_parent)
           }
@@ -39,13 +39,13 @@ const Timeline_Element = ({ content }) => {
         <div className="text-lg font-black">{content.title}</div>
         {content.text}
       </div>
-      <div id={content.title} className="timeline-start md:text-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-2000 translate-y-50 opacity-0">
+      <div id={content.title} className="timeline-start md:text-end rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
         {
         content.link !== null ?
         <Link href={content.link}>
-          <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
+          <Image src={content.src} height={2000} width={2000} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
         </Link> 
-        : <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1500 ease-in-out' />
+        : <Image src={content.src} height={2000} width={2000} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
         }
       </div>
       <hr />

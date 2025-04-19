@@ -6,7 +6,7 @@ const table_data = {
     keys : [0, 1, 2, 3, 4],
     headers : ['Skills', 'Mechanical Eng', 'Software Eng', 'Tools', 'DevOps'],
     rows: [
-        ['Spanish', 'Technical Presentations', 'Customer Interfacing', 'Requirement Definition', 'Prototyping', 'Product Development'],
+        ['Spanish', 'Technical Presentations', 'Customer Interfacing', 'Requirement Definition', 'Prototyping', 'Product Development', 'Cold Calling'],
         ['GD&T', 'Tolerance Analysis', 'FEA/CFD', 'Mechatronics'],
         ['Fullstack Development', 'CI/CD Cloud Deployment', 'API Design', 'Database Management'],
         ['SOLIDWORKS/PDM', 'NX/Teamcenter', 'MATLAB/Simulink', 'Python', 'C', 'JavaScript', 'HTML', 'CSS', 'SQL', 'MS Office Suite'],
@@ -16,7 +16,7 @@ const table_data = {
 
 const Skills = () => {
   return (
-    <div className="h-70 bg-base-100 shadow-xl rounded-lg">
+    <div className="h-125 bg-base-100 shadow-xl rounded-lg">
         <Table table_data={table_data} />
     </div>
   )

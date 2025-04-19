@@ -70,7 +70,8 @@ const Timeline = () => {
 
 
   return (
-    <div>
+    <div className='flex flex-col items-center'>
+      <p className='text-5xl font-bold mb-25'>Project Timeline</p>
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <Timeline_Left content={v3} />
         <Timeline_Right content={two} />
@@ -81,7 +82,6 @@ const Timeline = () => {
         <Timeline_Left content={v1} />
         <Timeline_Right content={mech} />
         <Timeline_Left content={bike} />
-
       </ul>
     </div>
   )

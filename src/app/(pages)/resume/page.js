@@ -6,8 +6,8 @@ import Timeline from '../../components/ui/Timeline'
 
 const page = () => {
   return (
-    <div className='flex flex-col mx-2 mt-10 space-y-10 md:flex-row md:mx-20 md:justify-evenly'>
-      <div className='flex flex-col space-y-25 md:w-1/3'>
+    <div className='flex flex-col mx-2 mt-10 space-y-10 md:flex-row md:mx-25 md:justify-between'>
+      <div className='flex flex-col space-y-25 md:w-6/20'>
         <Profile />
         <div className='w-full'>
           <Skills />
@@ -17,7 +17,7 @@ const page = () => {
           <Professional />
         </div>
       </div>
-      <div className='md:w-2/5'>
+      <div className='md:w-7/12'>
         <Timeline />
       </div>
     </div>

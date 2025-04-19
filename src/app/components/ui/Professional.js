@@ -5,9 +5,12 @@ const Professional = () => {
     <div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" defaultChecked />
-        <div className='collapse-title font-semibold flex flex-col md:flex-row md:justify-between'>
-          <div className="">Design Engineer, Belcan - Lynn, MA</div>
-          <div>Mar 2024 - Present</div>
+        <div className='collapse-title font-semibold flex flex-col'>
+          <div className='flex flex-row justify-between'>
+            <div>Design Engineer</div>
+            <div>Mar 2024 - Present</div>
+          </div>
+          <div className='text-sm italic'>Belcan - Lynn, MA</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
           <li> Liaised customer-supplier interactions to ensure on-time delivery of 100’s of nonconforming MRB case records</li>
@@ -21,9 +24,12 @@ const Professional = () => {
       </div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" />
-        <div className='collapse-title font-semibold flex flex-col md:flex-row md:justify-between'>
-          <div className="">Mechanical Engineering Intern, Lake Shore Cryotronics - Woburn, MA</div>
-          <div>May 2022 - Aug 2022</div>
+        <div className='collapse-title font-semibold flex flex-col'>
+          <div className='flex flex-row justify-between'>
+            <div>Mechanical Engineering Intern</div>
+            <div>May 2022 - Aug 2022</div>
+          </div>
+          <div className='text-sm italic'>Lake Shore Cryotronics - Woburn, MA</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
           <li> Defined universal sample holder requirements for ST-500 Cryostat, specifying a 3.5 K - 475 K temperature range, an adjustable vertical platform position, and the elimination of circular manufacturing processes</li>
@@ -35,9 +41,12 @@ const Professional = () => {
       </div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
         <input type="radio" name="my-accordion-3" />
-        <div className='collapse-title font-semibold flex flex-col md:flex-row md:justify-between'>
-          <div className=""> Systems Engineering Intern, Federal Aviation Administration - Washington, DC</div>
-          <div>Jun 2021 - Aug 2021</div>
+        <div className='collapse-title font-semibold flex flex-col'>
+          <div className='flex flex-row justify-between'>
+            <div>Systems Engineering Intern</div>
+            <div>Jun 2021 - Aug 2021</div>
+          </div>
+          <div className='text-sm italic'>Federal Aviation Administration - Washington, DC</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
           <li> Defined .999 inherent availability requirement for non-Federal Remote Air Traffic Control Towers to ensure all Remote Tower (RT) systems in National Airspace System met Federal minimum performance and safety requirements</li>

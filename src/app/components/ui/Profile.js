@@ -22,9 +22,9 @@ const Profile = () => {
           <p className='font-bold italic'>BS, Mechanical Engineering</p>
         </div>
         <div className="card-actions">
-          <div className="badge badge-outline">Mechanical Engineer</div>
-          <div className="badge badge-outline">Fullstack Developer</div>
-          <div className="badge badge-outline">Bad Golfer</div>
+          <div className="badge badge-outline bg-success">Mechanical Engineer</div>
+          <div className="badge badge-outline bg-success">Fullstack Developer</div>
+          <div className="badge badge-outline bg-error">Bad Golfer</div>
         </div>
       </div>
     </div>
