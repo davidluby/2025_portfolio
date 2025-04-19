@@ -15,7 +15,7 @@ const Timeline = () => {
     year: '2022',
     title: 'Color-Sorting Conveyor',
     text: 'Created electromechanical system that automatically sorted colored blocks. Wrote algorithms in C and used Arduino to control DC and stepper motors using color, IR, and Hall Effect sensor feedback.',
-    src: '/mech/full-picture.jpg',
+    src: '/timeline/mechatronics.jpg',
     link: 'mechatronics'
   }
   const v1 = {
