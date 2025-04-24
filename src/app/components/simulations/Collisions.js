@@ -1,5 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
+import Link from 'next/link'
+
 
 export default function TwoCollisions({ name }) {
     class vector {
@@ -102,6 +104,7 @@ export default function TwoCollisions({ name }) {
         let ctxt = canvas.getContext("2d");
         ctxt.clearRect(0, 0, scene.width, scene.height);
         ctxt.fillStyle = "#ff6600";
+        //ctxt.style.backgroundImage = 'url(/public/collision/parquet.jpg)'
 
         for (let i = 0; i < scene.n; i++) {
             let ball = scene.balls[i]
@@ -188,14 +191,21 @@ export default function TwoCollisions({ name }) {
     }, [scene])
     
     return (
-        <div className="w-full h-full flex flex-col justify-center">
-            <canvas id={name} className="w-full h-full mb-2 rounded-xl]"></canvas>
-            <div className="flex flex-row items-center justify-center space-x-2">
-                <button className="btn btn-primary btn-sm text-white" onClick={() => restart()}>Restart</button>
-                <button className="btn btn-primary btn-sm text-white" onClick={() => toggleGravity()}>Toggle Gravity</button>
-                <div className="flex flex-col items-center btn btn-sm btn-primary">
-                    <p className="text-white">Elasticity</p>
-                    <input id="restitution" type="range" min="0.1" max="1" step="0.1" defaultValue="1" className="h-1 bg-white rounded-lg appearance-none cursor-pointer range-sm"></input>
+        <div className="w-full tile">
+            <h1> 
+                <Link href="/collision" className="text-yellow-500 transition-all duration-500 animate-pulse">
+                    2-D Collision Simulation
+                </Link>   
+            </h1>
+            <div className="flex flex-col">
+                <canvas id={name} className="w-full mb-2 border-2 rounded-xl border-yellow-500 bg-[url(/collision/parquet.jpg)]"></canvas>
+                <div className="flex flex-row items-center justify-center space-x-2">
+                    <button className="rounded-md p-1 bg-yellow-500 hover:bg-yellow-300 text-xs text-white" onClick={() => restart()}>Restart</button>
+                    <button className="rounded-md p-1 bg-yellow-500 hover:bg-yellow-300 text-xs text-white" onClick={() => toggleGravity()}>Toggle Gravity</button>
+                    <div className="flex flex-col items-center">
+                        <p className="text-xs">Elasticity</p>
+                        <input id="restitution" type="range" min="0.1" max="1" step="0.1" defaultValue="1" className="h-1 bg-yellow-500 rounded-lg appearance-none cursor-pointer range-sm"></input>
+                    </div>
                 </div>
             </div>
         </div>

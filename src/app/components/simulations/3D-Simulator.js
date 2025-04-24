@@ -1,7 +1,7 @@
 // Thank you to Jos Stam and Matthias Muller:
 // http://graphics.cs.cmu.edu/nsp/course/15-464/Fall09/papers/StamFluidforGames.pdf
 // https://github.com/matthias-research/pages/blob/master/tenMinutePhysics/17-fluidSim.html
-
+'use client'
 import React, { useEffect } from 'react';
 import Link from 'next/link'
 

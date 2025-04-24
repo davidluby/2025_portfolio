@@ -295,15 +295,6 @@ const Sim = ({ tag = undefined }) => {
       }, { passive: false});
   }
 
-    return () => {
-      if (tag === undefined) {
-        canvas.dispose()
-      } else {
-        hero.dispose()
-    }
-      
-    }
-
   }, [])
 
   return (
