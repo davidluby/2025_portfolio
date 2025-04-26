@@ -9,12 +9,10 @@ const Splash = () => {
 
   const text = [
     'Hi, I\'m Dave.', 'Hi, I\'m Dave.',
-    'I\'m a builder.', 'I\'m a builder.',
-    'I\'m a problem solver.', 'I\'m a problem solver.',
-    'I\'m a learner.', 'I\'m a learner.',
-    'I\'m a creator.', 'I\'m a creator.',
-    'I\'m a thinker.', 'I\'m a thinker.',
-    'I\'m a tinkerer.', 'I\'m a tinkerer.'
+    'I like building things.', 'I like building things.',
+    'I like to code.', 'I like to code.',
+    'I\'m an Engineer.', 'I\'m an Engineer.',
+    'And I like talking to people.', 'And I like talking to people.'
   
   ]
   
