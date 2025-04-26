@@ -1,16 +1,16 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Theme = () => {
   const [theme, setTheme] = useState('emerald')
 
   const handle_theme = () => {
     if (theme === 'emerald') {
-      setTheme('dim')
+        setTheme('dim')
     } else {
-      setTheme('emerald')
+        setTheme('emerald')
     }
-  }
+    }
 
   return (
     <label className="flex cursor-pointer gap-2">

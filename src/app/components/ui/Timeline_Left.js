@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const Timeline_Element = ({ content }) => {
   useEffect(() => {
@@ -42,9 +41,9 @@ const Timeline_Element = ({ content }) => {
       <div id={content.title} className="timeline-start rounded-sm shadow-xl overflow-hidden tansition transition-all duration-750 translate-y-25 opacity-0">
         {
         content.link !== null ?
-        <Link href={content.link}>
+        <a href={content.link}>
           <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
-        </Link> 
+        </a> 
         : <Image src={content.src} height={1000} width={1000} alt={content.title} className='hover:scale-125 transition transition-all duration-1000 ease-in-out' />
         }
       </div>
