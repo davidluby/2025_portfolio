@@ -9,7 +9,7 @@ const Splash = () => {
 
   const text = [
     'Hi, I\'m Dave.', 'Hi, I\'m Dave.',
-    'Welcome to my Portfolio.', 'Welcome to my Portfolio.',
+    'Welcome to my portfolio.', 'Welcome to my portfolio.',
     'Have a question?', 'Have a question?',
     'Let\'s have a conversation.', 'Let\'s have a conversation.'
   
