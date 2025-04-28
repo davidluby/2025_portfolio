@@ -52,7 +52,7 @@ const page = () => {
           </p>
           <p>
             MCU instructions are typically programmed in C or C++ using an Integrated Development Environment
-            (IDE), like Atmel's Microchip Studio. Other languages and IDE's like Assembly or Python and Visual
+            (IDE), like Atmel&apos;s Microchip Studio. Other languages and IDE&apos;s like Assembly or Python and Visual
             Studio or Arduino IDE can be used. The applications presented here are written mostly in C using
             Microchip Studio.
           </p>
