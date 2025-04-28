@@ -22,7 +22,7 @@ const page = () => {
       <div className={panel}>
         <h1 className={header}>3 Dimensional Fluid Simulation</h1>
         <p>
-          This fluid simulation is an adaptation of Jos Stam's
+          This fluid simulation is an adaptation of Jos Stam&apos;s
           <a href='https://graphics.cs.cmu.edu/nsp/course/15-464/Spring11/papers/StamFluidforGames.pdf' rel="noopener noreferrer" target="_blank" className='text-blue-500'><i> Real-Time Fluid Dynamics for Games </i></a>
           for JavaScript in 3 dimensions. The solver models an Eulerian fluid using a discrete approximation of a modified Navier-Stokes formulation.
         </p>
