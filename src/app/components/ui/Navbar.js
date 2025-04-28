@@ -25,8 +25,8 @@ const Navbar = () => {
                             <li><a href='3d-fluid'>3D Fluid Simulation</a></li>
                             <li><a href='2d-fluid'>2D Fluid Simulation</a></li>
                             <li><a href='collision'>Collision Simulation</a></li>
-                            <li><a href='iterative'>Iterative Methods</a></li>
                             <li><a href='webgl'>WebGL</a></li>
+                            <li><a href='iterative'>Iterative Methods</a></li>
                         </ul>
                     </li>
                     <li><a href='papers'>Papers</a></li>
@@ -53,8 +53,8 @@ const Navbar = () => {
                                 <li><a href='3d-fluid'>3D Fluid Simulation</a></li>
                                 <li><a href='2d-fluid'>2D Fluid Simulation</a></li>
                                 <li><a href='collision'>Collision Simulation</a></li>
-                                <li><a href='iterative'>Iterative Methods</a></li>
                                 <li><a href='webgl'>WebGL</a></li>
+                                <li><a href='iterative'>Iterative Methods</a></li>
                             </ul>
                         </details>
                     </li>
