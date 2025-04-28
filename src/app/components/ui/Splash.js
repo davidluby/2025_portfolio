@@ -9,10 +9,9 @@ const Splash = () => {
 
   const text = [
     'Hi, I\'m Dave.', 'Hi, I\'m Dave.',
-    'I like building things.', 'I like building things.',
-    'I like to code.', 'I like to code.',
-    'I\'m an Engineer.', 'I\'m an Engineer.',
-    'And I like talking to people.', 'And I like talking to people.'
+    'Welcome to my Portfolio.', 'Welcome to my Portfolio.',
+    'Want to hear more?', 'Want to hear more?',
+    'Let\'s have a conversation.', 'Let\'s have a conversation.'
   
   ]
   
@@ -27,7 +26,7 @@ const Splash = () => {
       } else {
         setIndex(index + 1)
       }
-    }, 1500)
+    }, 2000)
     return () => {clearInterval(interval)}
   }, [index])
 

@@ -218,12 +218,8 @@ export default function Gl_triangle({ name }) {
     }
     
     return (
-        <div className="w-full tile">
-            <h1>
-                <Link href="/webgl" className="text-yellow-500 transition-all duration-500 animate-pulse">
-                    WebGL Animated Polygon
-                </Link>
-            </h1>
+        <div className="w-full md:w-1/4">
+            <h1>WebGL Polygon</h1>
             <canvas width="300" height="300" id={name} className="w-full border-2 rounded-xl border-yellow-500"></canvas>
         </div>
     )

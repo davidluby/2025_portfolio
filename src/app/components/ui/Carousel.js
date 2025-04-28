@@ -5,7 +5,6 @@ const Carousel = ({ id, paths }) => {
   const [picture, setPicture] = useState(0)
 
   const handle_click = (value) => {
-    console.log(picture, paths.length)
     if (picture === paths.length - 1) {
       if (value === 1) {
         setPicture(0)
@@ -35,8 +34,8 @@ const Carousel = ({ id, paths }) => {
           <div key={path} className="carousel-item relative w-full">
             <img src={path} className="w-full" />
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between pointer-events-none">
-              <div onClick={() => handle_click(-1)} className="pointer-events-auto btn btn-circle btn-xl text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❮</div>
-              <div onClick={() => handle_click(1)} className="pointer-events-auto btn btn-circle btn-xl text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❯</div>
+              <div onClick={() => handle_click(-1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❮</div>
+              <div onClick={() => handle_click(1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❯</div>
             </div>
           </div>
         )

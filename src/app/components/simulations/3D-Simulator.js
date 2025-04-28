@@ -3,7 +3,6 @@
 // https://github.com/matthias-research/pages/blob/master/tenMinutePhysics/17-fluidSim.html
 'use client'
 import React, { useEffect } from 'react';
-import Link from 'next/link'
 
 
 export default function ThreeFluid({ name }) {
@@ -516,7 +515,7 @@ export default function ThreeFluid({ name }) {
     ];
 
     let viscosity = 0;
-    let time_step = 0.05;
+    let time_step = .05;
     let flu = new fluid(viscosity, time_step);
     flu.initial_conditions();
 
@@ -674,20 +673,15 @@ export default function ThreeFluid({ name }) {
     }, [])
     
     return (
-        <div className="flex flex-col items-center w-full tile">
-            <h1>
-                <Link href="/fluids" className="border-yellow-500 text-yellow-500 transition-all duration-300 ease-in animate-pulse">
-                    3-D Fluid Simulation
-                </Link>
-            </h1>
+        <div className="flex flex-col items-center w-full">
             <div className="flex flex-col items-center">
                 <canvas id={name} height="500" width="400" className="w-3/4 mb-2 border-2 rounded-xl border-yellow-500"></canvas>
                 <div className="flex flex-row items-center justify-center space-x-2">
                     <div className="flex flex-col items-center">
-                        <p className="text-xs">Z-Axis Rotation</p>
+                        <p className="text-xs">Rotate</p>
                         <input id="rotation" type="range" min="0.0" max="6.28" step="0.01" defaultValue="2.36" className="h-1 bg-yellow-500 rounded-lg appearance-none cursor-pointer range-sm"></input>
                     </div>
-                    <button id="chaos" className="rounded-md p-1 bg-yellow-500 hover:bg-yellow-300 text-xs text-white">Add Chaos</button>
+                    <button id="chaos" className="rounded-md p-1 bg-yellow-500 hover:bg-yellow-300 text-xs text-white">Randomize</button>
                     <button className="rounded-md p-1 bg-yellow-500 hover:bg-yellow-300 text-xs text-white" onClick={() => restart()}>Refresh</button>
                 </div>
             </div>

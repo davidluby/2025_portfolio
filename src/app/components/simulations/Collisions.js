@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect } from 'react';
-import Link from 'next/link'
 
 
 export default function TwoCollisions({ name }) {
@@ -147,12 +146,12 @@ export default function TwoCollisions({ name }) {
 
 
     var scene = {
-        width : 500,
-        height : 250,
+        width : 1000,
+        height : 500,
         gravity : new vector(0, 0),
         restitution : 1,
         dT : .175,
-        n : 15,
+        n : 25,
         balls : []
     };
 
@@ -191,12 +190,7 @@ export default function TwoCollisions({ name }) {
     }, [scene])
     
     return (
-        <div className="w-full tile">
-            <h1> 
-                <Link href="/collision" className="text-yellow-500 transition-all duration-500 animate-pulse">
-                    2-D Collision Simulation
-                </Link>   
-            </h1>
+        <div className="w-full">
             <div className="flex flex-col">
                 <canvas id={name} className="w-full mb-2 border-2 rounded-xl border-yellow-500 bg-[url(/collision/parquet.jpg)]"></canvas>
                 <div className="flex flex-row items-center justify-center space-x-2">

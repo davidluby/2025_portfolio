@@ -232,12 +232,8 @@ export default function GL_Mesh({ name }) {
     };
     
     return (
-        <div className="w-full tile">
-            <h1>
-                <Link href="/webgl" className="text-yellow-500 transition-all duration-300 ease-in animate-pulse">
-                    WebGL 3-D Grid Mesh
-                </Link>
-            </h1>
+        <div className="w-full md:w-1/4">
+            <h1>WebGL 3-D Grid Mesh</h1>
             <div className="flex flex-col">
                 <canvas id={name} height="200" width="200" className="w-full border-2 rounded-xl border-yellow-500"></canvas>
             </div>
