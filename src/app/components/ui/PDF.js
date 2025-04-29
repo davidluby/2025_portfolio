@@ -1,7 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 const PDF = ({ id, paths }) => {
   const [picture, setPicture] = useState(0)
