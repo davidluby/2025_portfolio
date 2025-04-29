@@ -32,6 +32,8 @@ const PDF = ({ id, paths }) => {
   ]
   const header= 'text-3xl font-bold mb-5'
   return (
+    <div>
+      <embed src={paths[0][0]} width="100%" height="800px" className='rounded-lg' />
     <div id={id} className="carousel overflow-hidden w-screen md:w-full">
       {paths.map((path) => {
         return (
@@ -47,6 +49,7 @@ const PDF = ({ id, paths }) => {
           </div>
         )
       })}
+    </div>
     </div>
   )
 }
