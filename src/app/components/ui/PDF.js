@@ -32,15 +32,13 @@ const PDF = ({ id, paths }) => {
   ]
   const header= 'text-3xl font-bold mb-5'
   return (
-    <div>
-      <iframe src={paths[0][0]} width="100%" height="800px" className='rounded-lg w-full' />
     <div id={id} className="carousel overflow-hidden w-screen md:w-full">
       {paths.map((path) => {
         return (
           <div key={path[0]} className='carousel-item flex-col w-full'>
             <h1 className={header}>{titles[path[1]]}</h1>
             <div className="relative w-full flex-col items-center">
-              <embed src={path[0]} width="100%" height="800px" className='rounded-lg'/>
+              <iframe src={path[0]} width="100%" height="800px" className='rounded-lg'/>
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between pointer-events-none">
                 <div onClick={() => handle_click(-1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❮</div>
                 <div onClick={() => handle_click(1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❯</div>
@@ -49,7 +47,6 @@ const PDF = ({ id, paths }) => {
           </div>
         )
       })}
-    </div>
     </div>
   )
 }
