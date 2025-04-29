@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Carousel from '@/app/components/ui/Carousel'
 
 const page = () => {
@@ -12,7 +13,7 @@ const page = () => {
   return (
     <div className='flex flex-col items-center'>
       <div className='relative w-full h-[1750px] lg:h-screen'>
-        <img src='/mech/full-picture.jpg' className='absolute w-full h-full object-cover brightness-40'></img>
+        <Image src='/mech/full-picture.jpg' fill={true} priority={true} alt='mechatronics background' className='absolute object-cover brightness-40' />
         <h1 className={`${header} absolute top-0 left-0 lg:top-10 lg:left-1/8 text-gray-300`}>Mechatronic Color Sorting Conveyor</h1>
         <div className="relative flex flex-col items-center space-y-5 mt-25 lg:flex-row lg:justify-evenly lg:space-y-0 lg:mt-0 lg:top-1/2 transform lg:-translate-y-1/2">
           <div className="w-[300px] h-[500px]">
@@ -62,7 +63,7 @@ const page = () => {
             an MCU often map a system of inputs to program logic which maps a system of outputs back through
             the PCB for some function, like controlling an LED.
           </p>
-          <img src='/mech/arduino.jpg' className='rounded-lg shadow-xl'></img>
+          <img src='/mech/arduino.jpg' className='rounded-lg shadow-xl' />
       </div>
     </div>
   )
