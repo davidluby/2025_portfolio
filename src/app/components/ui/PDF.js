@@ -1,5 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 const PDF = ({ id, paths }) => {
   const [picture, setPicture] = useState(0)
@@ -38,7 +40,7 @@ const PDF = ({ id, paths }) => {
           <div key={path[0]} className='carousel-item flex-col w-full'>
             <h1 className={header}>{titles[path[1]]}</h1>
             <div className="relative w-full flex-col items-center">
-              <embed src={path[0]} width="100%" height="100%" className='rounded-lg h-screen'/>
+              <embed src={path[0]} width="100%" height="100%" className='rounded-lg w-full h-screen'/>
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between pointer-events-none">
                 <div onClick={() => handle_click(-1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❮</div>
                 <div onClick={() => handle_click(1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❯</div>
