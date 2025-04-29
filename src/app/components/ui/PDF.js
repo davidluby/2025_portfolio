@@ -38,7 +38,7 @@ const PDF = ({ id, paths }) => {
           <div key={path[0]} className='carousel-item flex-col w-full'>
             <h1 className={header}>{titles[path[1]]}</h1>
             <div className="relative w-full flex-col items-center">
-              <iframe src={path[0]} width="100%" height="800px" className='rounded-lg'/>
+              <embed src={path[0]} width="100%" height="100%" className='rounded-lg h-screen'/>
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between pointer-events-none">
                 <div onClick={() => handle_click(-1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❮</div>
                 <div onClick={() => handle_click(1)} className="pointer-events-auto btn btn-circle btn-sm text-black bg-info animate-pulse hover:scale-110 transition transition-all ease-in-out duration-300">❯</div>
