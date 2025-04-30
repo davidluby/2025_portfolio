@@ -1,12 +1,11 @@
 import React from 'react'
-import Image from 'next/image'
 import Table from './Table'
 
 const table_data = {
     keys : [0, 1, 2, 3, 4],
     headers : ['Skills', 'Mechanical Eng', 'Software Eng', 'Tools', 'DevOps'],
     rows: [
-        ['Spanish', 'Technical Presentations', 'Customer Interfacing', 'Requirement Definition', 'Prototyping', 'Product Development', 'Cold Calling'],
+        ['Spanish', 'Technical Presentation', 'Customer Relations', 'Product Development', 'Requirement Definition', 'Prototyping and Testing', 'Warm Calling'],
         ['GD&T', 'Tolerance Analysis', 'FEA/CFD', 'Mechatronics'],
         ['Fullstack Development', 'CI/CD Cloud Deployment', 'API Design', 'Database Management'],
         ['SOLIDWORKS/PDM', 'NX/Teamcenter', 'MATLAB/Simulink', 'Python', 'C', 'JavaScript', 'HTML', 'CSS', 'SQL', 'MS Office Suite'],

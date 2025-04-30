@@ -31,7 +31,7 @@ const page = () => {
         <h1 className={header}>Overview</h1>
           <p>
             This project is characterized by a conveyor belt that automatically sorts colored blocks.
-            When unsorted colored blocks are palced onto the conveyor, the system moves them forward,
+            When unsorted colored blocks are placed onto the conveyor, the system moves them forward,
             collecting color data, storing it with a FIFO algorithm, and sorting them in the corresponding
             color bin on a plate controlled by a stepper motor. The videos above demonstrate the system.
           </p>
@@ -46,21 +46,21 @@ const page = () => {
           <p>
             A high-level description of an Arduino board can be reduced to a microcontroller (MCU) and a
             printed circuit board (PCB), emphasizing the MCU as the essential tool and the PCB as its
-            interfacing environment. The ATmel ATmega 328P (328P) MCU plus an Arduino PCB submit the
+            interfacing environment. The Atmel ATmega 328P (328P) MCU plus an Arduino PCB submit the
             Arduino Uno to this description. Interaction with the 328P is facilitated by the PCB it sits
-            on, however, plenty of users elect to interface with these chips using a Custom PCB or even
+            on; however, plenty of users elect to interface with these chips using a custom PCB or even
             just a breadboard.
           </p>
           <p>
-            MCU instructions are typically programmed in C or C++ using an Integrated Development Environment
-            (IDE), like Atmel&apos;s Microchip Studio. Other languages and IDE&apos;s like Assembly or Python and Visual
+            MCU instructions are typically programmed in C or C++ using an integrated development environment
+            (IDE), like Atmel&apos;s Microchip Studio. Other languages and IDEs like Assembly or Python and Visual
             Studio or Arduino IDE can be used. The applications presented here are written mostly in C using
             Microchip Studio.
           </p>
           <p>
             These instruction files (scripts) are compiled, or translated, into files an MCU can understand,
             called hex (hexadecimal) files, and uploaded to the MCU from a computer. Instructions given to
-            an MCU often map a system of inputs to program logic which maps a system of outputs back through
+            an MCU often map a system of inputs to program logic, which maps a system of outputs back through
             the PCB for some function, like controlling an LED.
           </p>
           <img src='/mech/arduino.jpg' className='rounded-lg shadow-xl' />

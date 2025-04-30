@@ -27,7 +27,7 @@ const page = () => {
           for JavaScript in 3 dimensions. The solver models an Eulerian fluid using a discrete approximation of a modified Navier-Stokes formulation.
         </p>
         <p>
-          A major limitation of the simulation is the platform is lives on. Brower-based applications are not
+          A major limitation of the simulation is the platform it lives on. Brower-based applications are not
           conducive to simulations like this. For the 20x20x30 simulation shown (12,000 elements), 144,000
           polygons need to be drawn, corresponding to 432,000 coordinates, 1,296,000 coordinate components,
           and 1,728,000 RGBA values for each coordinate. And that is without consideration of the expense

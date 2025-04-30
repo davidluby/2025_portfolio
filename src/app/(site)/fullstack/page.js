@@ -59,13 +59,13 @@ const page = () => {
             <h1 className={header}>The Details</h1>
             <p>
                 Local Git repositories for the frontend and backend fed CI/CD pipelines to Netlify and AWS deployments,
-                respectively. Netlify has a simple, batteries&#x2013;included CI/CD system, automatically triggering builds
+                respectively. Netlify has a simple, batteries-included CI/CD system, automatically triggering builds
                 whenever local commits are pushed to a remote repository. AWS is a little more complex.
             </p>
             <p>
                 To set up a similar process for the backend, the local repository fed into AWS CodePipeline and CodeDeploy
                 to initiate builds on an Amazon Linux 2 instance. CodePipeline watches remote GitHub repositories for
-                pushes and stores the code in an S3 Bucket. CodeDeploy watches the bucket and, in this case, used an
+                pushes and stores the code in an S3 bucket. CodeDeploy watches the bucket and, in this case, used an
                 appspec.yml file to manage the deployment.
             </p>
             <Carousel id='aws' paths={aws_paths} />
