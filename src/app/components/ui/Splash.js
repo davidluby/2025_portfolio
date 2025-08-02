@@ -45,7 +45,7 @@ const Splash = () => {
         drag.classList.toggle('flex-grow')
         drag.classList.toggle('w-0')
       }
-      setTimeout(() => interact(), 2500)
+      setTimeout(() => interact(), 1500)
     }
   }, [])
 
@@ -92,8 +92,8 @@ const Splash = () => {
                 </h1>
               </div>
               <div className='flex justify-center w-full'>
-              <div id='blurb' className="relative overflow-hidden h-20 transition-all delay-1000 duration-1000 w-0">
-                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center'>
+              <div id='blurb' className="relative overflow-hidden h-30 transition-all delay-1000 duration-1000 w-0">
+                <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center md:text-xl'>
                   Please check out my resume page to see my professional experience, and visit my project pages for anything that catches your eye.
                 </div>
               </div>
