@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navbar from '../components/ui/Navbar'
 import Splash from '../components/ui/Splash'
 import Timeline from '../components/ui/Timeline'
+import About from '../components/ui/About'
 
 const page = () => {
   return (
@@ -12,6 +13,9 @@ const page = () => {
       <div className='flex flex-col h-dvh w-full'>
         <Navbar />
         <Splash />
+      </div>
+      <div className='min-h-screen w-full flex flex-col justify-center items-center border-4 py-25'>
+        <About />
       </div>
       <div className='min-h-screen flex flex-col items-center justify-center w-full pt-25 md:p-25 bg-base-200 overflow-hidden'>
         <Timeline />
