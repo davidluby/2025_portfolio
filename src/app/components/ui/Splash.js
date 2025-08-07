@@ -45,7 +45,7 @@ const Splash = () => {
         drag.classList.toggle('flex-grow')
         drag.classList.toggle('w-0')
       }
-      setTimeout(() => interact(), 1500)
+      setTimeout(() => interact(), 500)
     }
   }, [])
 
