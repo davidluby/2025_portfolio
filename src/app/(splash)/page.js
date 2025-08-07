@@ -14,9 +14,6 @@ const page = () => {
         <Navbar />
         <Splash />
       </div>
-      <div className='min-h-screen w-full flex flex-col justify-center items-center py-25'>
-        <About />
-      </div>
       <div className='min-h-screen flex flex-col items-center justify-center w-full pt-25 md:p-25 bg-base-200 overflow-hidden'>
         <Timeline />
       </div>
