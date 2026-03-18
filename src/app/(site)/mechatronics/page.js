@@ -13,7 +13,7 @@ const page = () => {
   return (
     <div className='flex flex-col items-center'>
       <div className='relative w-full h-[1750px] lg:h-screen'>
-        <Image src='/mech/full-picture.jpg' fill={true} priority={true} alt='mechatronics background' className='absolute object-cover brightness-40' />
+        <Image src='/mech/background.jpg' fill={true} priority={true} alt='mechatronics background' className='absolute object-cover brightness-40' />
         <h1 className={`${header} absolute top-0 left-0 lg:top-10 lg:left-1/8 text-gray-300`}>Mechatronic Color Sorting Conveyor</h1>
         <div className="relative flex flex-col items-center space-y-5 mt-25 lg:flex-row lg:justify-evenly lg:space-y-0 lg:mt-0 lg:top-1/2 transform lg:-translate-y-1/2">
           <div className="w-[300px] h-[500px]">
