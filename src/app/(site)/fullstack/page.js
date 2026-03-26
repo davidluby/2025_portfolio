@@ -25,7 +25,7 @@ const page = () => {
   return (
     <div className='flex flex-col items-center'>
         <div className='relative w-full h-200 md:h-screen'>
-            <Image src='/fullstack/background.jpg' fill={true} priority={true} unoptimized={true} alt='marcus smart background' className='absolute object-cover brightness-40' />
+            <Image src='/fullstack/background.jpg' fill={true} priority={true} alt='marcus smart background' className='absolute object-cover brightness-40' />
             <h1 className={`${header} absolute top-0 left-0 lg:top-10 lg:left-1/8 text-gray-300`}>Basketball Cards App</h1>
             <div className='relative top-1/16 lg:top-1/2 transform lg:-translate-y-1/2 flex flex-col lg:flex-row lg:justify-evenly lg:items-center'>
                 <Laptop photo='/fullstack/front/creating.png' />
