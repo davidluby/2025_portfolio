@@ -7,19 +7,35 @@ const Professional = () => {
         <input type="radio" name="my-accordion-3" defaultChecked />
         <div className='collapse-title font-semibold flex flex-col'>
           <div className='flex flex-col md:flex-row justify-between'>
-            <div>Design Engineer</div>
-            <div>Mar 2024 - Present</div>
+            <div>Project Mangement Analyst</div>
+            <div>Mar 2025 - Present</div>
           </div>
           <div className='text-sm italic'>Belcan - Lynn, MA</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
-          <li> Liaised customer-supplier interactions to ensure on-time delivery of 100’s of nonconforming MRB case records</li>
-          <li> Saved customer over $80,000 using RSS tolerance analyses to substantiate acceptance of 3 manufacturing errors on a rotating part while ensuring interchangeability and safety in assembly of any engine</li>
-          <li> Analyzed effect of thermally-induced hoop stress on nonconforming rabbet feature due to casting defect and accepted nonconformance based on an expected 3% stress increase</li>
-          <li> Streamlined evaluation of nonconforming bolt hole circles using Python to automatically process CMM data and determine fit between mating parts for any 2 unique hole patterns 360 degrees around a flange</li>
-          <li> Led digitization effort in engineering change orders for 5 glass master models to eliminate risk of breaking and to update according to GE best practices and ASME Y14.5</li>
-          <li> Created machined equivalents to 7 cast parts using NX and Teamcenter to interface with a team of engineers</li>
-          <li> Analyzed supplier data from inspectability requirements to validate fulfillment of critical manufacturing requirements</li>
+          <li> Developed relationships with GE engineers and manufacturing plant leaders to discuss business cases, technical feasibility, risks, timelines, and new opportunities for hundreds of commercial engine line (LEAP) cost savings projects</li>
+          <li> Helped LEAP Operating Expense (OE) Team ideate, prioritize, and manage over 3000 cost savings projects to reduce net LEAP engine line inflation to less than 1% ($24M) through 2025 fiscal year</li>
+          <li> Defined cost savings KPI’s and used Smartsheet Python SDK and API to build dashboards, visualizations, and automations to monitor team performance, project anomalies, and overall project pipeline health</li>
+          <li> Created Excel models to analyze cost savings project data, identify trends, gather key insights, and drive LEAP OE Team project management operations and actions</li>
+          <li> Managed SQDIP Daily Management Dashboard in support of LEAP OE Team weekly operating rhythms and helped plan team building events to drive cohesion</li>
+        </ul>
+      </div>
+      <div className="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" defaultChecked />
+        <div className='collapse-title font-semibold flex flex-col'>
+          <div className='flex flex-col md:flex-row justify-between'>
+            <div>Design Engineer</div>
+            <div>Mar 2024 - Mar 2025</div>
+          </div>
+          <div className='text-sm italic'>Belcan - Lynn, MA</div>
+        </div>
+        <ul className="collapse-content text-sm list-disc list-inside">
+          <li> Used supplier data to perform tolerance stack ups, analyze stress concentrations, and recommend repairs to close hundreds of Material Review Board (MRB) case records and reduce losses from defective parts</li>
+          <li> Resolved MRB case record defects within average quarterly performance KPI (25 hours per resolution)</li>
+          <li> Worked with suppliers to propose, analyze, and issue dozens of drawing changes to reduce frequent manufacturing defects, improve part producibility, and save on manufacturing costs</li>
+          <li> Modeled design changes and part defects in SOLIDWORKS and NX to evaluate and influence design engineering decisions for several GE Aerospace engine lines and parts</li>
+          <li> Assisted suppliers and quality engineers in developing inspection requirements for significant manufacturing processes and gather data to validate results</li>
+          <li> Streamlined evaluation of nonconforming bolt hole circles using Python to automatically process CMM data and determine fit between any two mating bolt hole patterns</li>
         </ul>
       </div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
@@ -32,11 +48,9 @@ const Professional = () => {
           <div className='text-sm italic'>Lake Shore Cryotronics - Woburn, MA</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
-          <li> Defined universal sample holder requirements for ST-500 Cryostat, specifying a 3.5 K - 475 K temperature range, an adjustable vertical platform position, and the elimination of circular manufacturing processes</li>
-          <li> Held design reviews and manufactured prototypes to verify sample holder components aligned with requirements</li>
-          <li> Integrated sample holder prototypes in ST-500 system to validate product performance using analyses of test data</li>
+          <li> Designed an adjustable sample holder platform using a collet clamp to secure its vertical position while eliminating circular manufacturing processes and maintaining adequate thermal conductivity</li>
+          <li> Held design reviews, manufactured prototypes, gathered test data, and analyzed results to validate sample holder user and thermal performance requirements</li>
           <li> Reduced worst-case tolerance stackup of ST-500 Cryostat platform by 67% with negligible cost increase</li>
-          <li> Processed over 50 engineering change orders to update legacy drawings according to ASME Y14.5</li>
         </ul>
       </div>
       <div className="collapse collapse-plus bg-base-100 border border-base-300">
@@ -49,9 +63,8 @@ const Professional = () => {
           <div className='text-sm italic'>Federal Aviation Administration - Washington, DC</div>
         </div>
         <ul className="collapse-content text-sm list-disc list-inside">
-          <li> Defined .999 inherent availability requirement for non-Federal Remote Air Traffic Control Towers to ensure all Remote Tower (RT) systems in National Airspace System met Federal minimum performance and safety requirements</li>
-          <li> Used existing specifications for RT systems in European standard  EUROCAE ED-240A  to justify 2 hour mean time  to repair and 2222 hour mean time between critical failure for calculation of inherent availability requirement</li>
-          <li> Substantiated Federal authority to regulate non-Federal RT Systems to ensure safety of National Airspace System</li>
+          <li> Defined uptime requirements for remote air traffic control towers according to minimum federal performance and safety guidelines for the National Airspace System</li>
+          <li> Substantiated federal authority to regulate remote air traffic control towers at private, non-federal airports using existing precedent detailed in regulatory documents</li>
         </ul>
       </div>
     </div>

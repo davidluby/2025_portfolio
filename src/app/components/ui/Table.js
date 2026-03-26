@@ -35,7 +35,7 @@ const Table = ({ table_data }) => {
                             {rows[key].map((row) => {
                                 return (
                                     <tbody key={row}>
-                                        <tr className='shadow-2xs'><td>{row}</td></tr>
+                                        <tr className='shadow-2xs'><td className='py-1'>{row}</td></tr>
                                     </tbody>
                                 )
                             })}
